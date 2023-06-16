@@ -1,7 +1,7 @@
-/* Stop and Wait Protocol: Send one packet and wait for it's independent acknowledgement before sending
-the next packet. If the data packet is lost, the acknowledgement doesn't come, it means the data packet
-needs to be retransmitted by the user.Even if the acknowledgement is lost, the sender retransmits the 
-data packet. Seeing an already sent data packet, the receiver sends an acknowledgement but silently 
+/* Stop and Wait Protocol: Sender sends one frame and wait for it's independent acknowledgement before sending
+another one. 2 cases might occur:
+1) Frame is lost so the acknowledgement doesn't come. Sender retransmits Frame.
+2) Acknowledgement is lost. the sender retransmits frame. Seeing an already received frame, the receiver resends the acknowledgement and silently 
 discards the duplicate packet. */
 
 #include <iostream>
